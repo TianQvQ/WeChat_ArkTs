@@ -1,0 +1,92 @@
+import Toolbar from '../../CommonTool/BackPage'
+
+@Entry
+@Component
+struct MyQC {
+  Src:string = "https://github.com/TianQvQ/WeChat_ArkTs"
+  build(){
+    Column(){
+      //顶部控件
+      Toolbar({title:""})
+      Row(){
+        //用户头像
+        Image($r('app.media.user'))
+          .width(55)
+          .height(55)
+          .margin({right:10})
+          .borderRadius(6)
+        Column(){
+          //用户头像
+          Text('π')
+            .fontSize(19)
+            .fontWeight(500)
+            .fontColor(Color.Black)
+          //用户地址
+          Text('广东 深圳')
+            .fontSize(15)
+            .fontColor(Color.Grey)
+            .margin({top:10})
+        }
+        .alignItems(HorizontalAlign.Start)
+      }
+      .width(280)
+      .margin({top:100})
+
+      Stack(){
+        //二维码
+        QRCode(this.Src)
+          .width(280)
+          .height(280)
+          .color(Color.Black)
+          .backgroundColor(Color.White)
+          .margin({top:30})
+        //二维码中间图片
+        Image($r('app.media.wechat_qrcode_logo'))
+          .width(60)
+          .height(60)
+          .padding(6)
+          .margin({right:10})
+          .borderRadius(6)
+          .backgroundColor(Color.White)
+      }
+
+      Text("扫一扫上面的二维码图案，加我为好友")
+        .fontSize(15)
+        .margin({top:20})
+        .fontColor(Color.Grey)
+      Blank().layoutWeight(1)
+      //底部文字
+      Row(){
+        Text("扫一扫")
+          .fontSize(16)
+          .fontWeight(600)
+          .fontColor("#5f6c8a")
+          .layoutWeight(1)
+          .textAlign(TextAlign.Center)
+        Divider()
+          .vertical(true)
+          .color(Color.Grey)
+          .height(10)
+        Text("换个样式")
+          .fontSize(16)
+          .fontWeight(600)
+          .fontColor("#5f6c8a")
+          .layoutWeight(1)
+          .textAlign(TextAlign.Center)
+        Divider()
+          .vertical(true)
+          .color(Color.Grey)
+          .height(10)
+        Text("保存图片")
+          .fontSize(16)
+          .fontWeight(600)
+          .fontColor("#5f6c8a")
+          .layoutWeight(1)
+          .textAlign(TextAlign.Center)
+      }
+      .width(280)
+      .margin({bottom:60})
+    }
+    .width('100%')
+  }
+}

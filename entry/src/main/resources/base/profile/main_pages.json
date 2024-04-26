@@ -1,0 +1,9 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Mine/MyQC",
+    "Search/Search",
+    "pages/WeChat/ChatPage",
+    "pages/Find/FriendCircle"
+  ]
+}
